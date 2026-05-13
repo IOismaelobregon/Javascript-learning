@@ -1,0 +1,160 @@
+/* ==========================================
+   ESTILOS PARA NUESTRO CONTADOR
+   ========================================== */
+
+/* Estilos generales de la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Caja del contador */
+.contador-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Número grande del contador */
+#numero {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Etiqueta debajo del número */
+.etiqueta {
+    font-size: 16px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* Contenedor de botones */
+.botones {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Estilos generales de botones */
+.btn {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+/* Botón de sumar (verde) */
+.btn-sumar {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.btn-sumar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(17, 153, 142, 0.4);
+}
+
+.btn-sumar:active {
+    transform: translateY(-1px);
+}
+
+/* Botón de restar (rojo) */
+.btn-restar {
+    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+}
+
+.btn-restar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(235, 51, 73, 0.4);
+}
+
+.btn-restar:active {
+    transform: translateY(-1px);
+}
+
+/* Botón de reiniciar (azul) */
+.btn-reiniciar {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin-top: 10px;
+}
+
+.btn-reiniciar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-reiniciar:active {
+    transform: translateY(-1px);
+}
+
+/* Caja de información */
+.info {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.info p {
+    color: #666;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #numero {
+        font-size: 60px;
+    }
+
+    .btn {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}
