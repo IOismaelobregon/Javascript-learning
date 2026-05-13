@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 2: Objetos en JavaScript</title>
+    <link rel="stylesheet" href="leccion-2-objetos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Lección 2: OBJETOS en JavaScript</h1>
+            <p class="subtitle">Aprende a crear y usar objetos para datos más complejos</p>
+            <a href="index-lecciones.html" class="btn-volver">← Volver al menú</a>
+        </header>
+
+        <!-- SECCIÓN 1: QUÉ ES UN OBJETO -->
+        <section class="leccion">
+            <h2>1️⃣ ¿QUÉ ES UN OBJETO?</h2>
+            <div class="contenido">
+                <p>Un <strong>objeto</strong> es una colección de <strong>propiedades etiquetadas</strong> (pares clave-valor).</p>
+                <p>Mientras que un array es una lista, un objeto es un contenedor con información específica.</p>
+                <div class="comparacion">
+                    <div class="item">
+                        <h4>Array:</h4>
+                        <code>['Juan', 25, 'México']</code>
+                        <p>¿Qué es cada dato? 🤷</p>
+                    </div>
+                    <div class="item">
+                        <h4>Objeto:</h4>
+                        <code>{nombre: 'Juan', edad: 25, pais: 'México'}</code>
+                        <p>¡Claro qué es cada dato! ✅</p>
+                    </div>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo1()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: CREAR OBJETOS -->
+        <section class="leccion">
+            <h2>2️⃣ CREAR OBJETOS</h2>
+            <div class="contenido">
+                <p>Hay diferentes formas de crear objetos:</p>
+                <div class="codigo">
+                    <pre><code>// Forma 1: Usar llaves { }
+let persona = {
+    nombre: 'Juan',
+    edad: 25,
+    pais: 'México'
+};
+
+// Forma 2: Objeto vacío
+let carro = {};
+carro.marca = 'Toyota';
+carro.modelo = 'Corolla';</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo2()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: ACCEDER A PROPIEDADES -->
+        <section class="leccion">
+            <h2>3️⃣ ACCEDER A PROPIEDADES</h2>
+            <div class="contenido">
+                <p>Hay dos formas de acceder a las propiedades de un objeto:</p>
+                <div class="codigo">
+                    <pre><code>let persona = {
+    nombre: 'Juan',
+    edad: 25,
+    pais: 'México'
+};
+
+// Forma 1: Punto (.)
+persona.nombre  // 'Juan'
+
+// Forma 2: Corchetes []
+persona['edad']  // 25</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo3()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: MODIFICAR PROPIEDADES -->
+        <section class="leccion">
+            <h2>4️⃣ MODIFICAR PROPIEDADES</h2>
+            <div class="contenido">
+                <p>Puedes cambiar valores existentes o agregar nuevas propiedades:</p>
+                <div class="codigo">
+                    <pre><code>let persona = {
+    nombre: 'Juan',
+    edad: 25
+};
+
+// Cambiar valor existente
+persona.edad = 26;
+
+// Agregar nueva propiedad
+persona.email = 'juan@email.com';
+
+console.log(persona);
+// {nombre: 'Juan', edad: 26, email: 'juan@email.com'}</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo4()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: MÉTODOS -->
+        <section class="leccion">
+            <h2>5️⃣ MÉTODOS (Funciones dentro de objetos)</h2>
+            <div class="contenido">
+                <p>Un objeto puede contener <strong>funciones</strong> llamadas <strong>métodos</strong>:</p>
+                <div class="codigo">
+                    <pre><code>let persona = {
+    nombre: 'Juan',
+    edad: 25,
+    saludar: function() {
+        return 'Hola, soy ' + this.nombre;
+    }
+};
+
+persona.saludar();  // 'Hola, soy Juan'</code></pre>
+                </div>
+                <p style="margin-top: 15px;"><strong>Nota:</strong> <code>this</code> se refiere al propio objeto.</p>
+                <button class="btn btn-ejemplo" onclick="ejemplo5()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: RECORRER OBJETOS -->
+        <section class="leccion">
+            <h2>6️⃣ RECORRER UN OBJETO CON for...in</h2>
+            <div class="contenido">
+                <p><strong>for...in</strong> - Recorrer todas las propiedades:</p>
+                <div class="codigo">
+                    <pre><code>let persona = {
+    nombre: 'Juan',
+    edad: 25,
+    pais: 'México'
+};
+
+for (let clave in persona) {
+    console.log(clave + ': ' + persona[clave]);
+}
+
+// Resultado:
+// nombre: Juan
+// edad: 25
+// pais: México</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo6()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: OBJETOS EN ARRAYS -->
+        <section class="leccion">
+            <h2>7️⃣ ARRAY DE OBJETOS</h2>
+            <div class="contenido">
+                <p>Puedes crear arrays de objetos para datos más complejos:</p>
+                <div class="codigo">
+                    <pre><code>let personas = [
+    {nombre: 'Juan', edad: 25},
+    {nombre: 'María', edad: 30},
+    {nombre: 'Pedro', edad: 28}
+];
+
+// Acceder al primer objeto
+personas[0].nombre  // 'Juan'
+
+// Recorrer todos
+personas.forEach(function(persona) {
+    console.log(persona.nombre);
+});</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo7()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: DESTRUCTURING -->
+        <section class="leccion">
+            <h2>8️⃣ DESTRUCTURING (Extraer propiedades)</h2>
+            <div class="contenido">
+                <p><strong>Destructuring</strong> permite extraer propiedades de forma rápida:</p>
+                <div class="codigo">
+                    <pre><code>let persona = {
+    nombre: 'Juan',
+    edad: 25,
+    pais: 'México'
+};
+
+// Sin destructuring:
+let nombre = persona.nombre;
+let edad = persona.edad;
+
+// Con destructuring:
+let {nombre, edad} = persona;
+
+console.log(nombre);  // 'Juan'
+console.log(edad);    // 25</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo8()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 9: SPREAD OPERATOR -->
+        <section class="leccion">
+            <h2>9️⃣ SPREAD OPERATOR (...)</h2>
+            <div class="contenido">
+                <p>El <strong>spread operator (...)</strong> permite copiar y mezclar objetos:</p>
+                <div class="codigo">
+                    <pre><code>let persona = {nombre: 'Juan', edad: 25};
+
+// Copiar un objeto
+let copia = {...persona};
+
+// Mezclar objetos
+let trabajador = {
+    ...persona,
+    puesto: 'Desarrollador',
+    edad: 26  // Esto sobrescribe la edad anterior
+};
+
+console.log(trabajador);
+// {nombre: 'Juan', edad: 26, puesto: 'Desarrollador'}</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo9()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 10: DESAFÍO -->
+        <section class="leccion leccion-desafio">
+            <h2>🎯 DESAFÍO: Crea un carrito de compras</h2>
+            <div class="contenido">
+                <p>Lee el código y adivina qué mostrará:</p>
+                <div class="codigo">
+                    <pre><code>let carrito = {
+    productos: ['laptop', 'mouse', 'teclado'],
+    total: 1500,
+    resumen: function() {
+        return 'Total: $' + this.total + 
+               ' (' + this.productos.length + ' productos)';
+    }
+};
+
+console.log(carrito.resumen());</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="desafio1()">▶ Ver la respuesta</button>
+            </div>
+        </section>
+
+        <!-- CONSOLA PERSONALIZADA -->
+        <section class="consola-section">
+            <h3>📟 Consola:</h3>
+            <div id="consola" class="consola"></div>
+            <button class="btn btn-limpiar" onclick="limpiarConsola()">🗑️ Limpiar consola</button>
+        </section>
+
+        <!-- SIGUIENTE LECCIÓN -->
+        <section class="siguiente-leccion">
+            <h3>¿Listo para el siguiente nivel?</h3>
+            <a href="leccion-3-bucles.html" class="btn-siguiente">Ir a Lección 3: BUCLES →</a>
+        </section>
+    </div>
+
+    <script src="leccion-2-objetos.js"></script>
+</body>
+</html>
