@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Aprende JavaScript - Lecciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 36px;
+        }
+
+        .lecciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .leccion-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .leccion-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .leccion-card .emoji {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .leccion-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .leccion-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .leccion-card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .leccion-card a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .proyecto-anterior {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+        }
+
+        .proyecto-anterior h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .proyecto-anterior a {
+            display: inline-block;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .proyecto-anterior a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(17, 153, 142, 0.4);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Aprende JavaScript - Fundamentos</h1>
+
+        <div class="lecciones-grid">
+            <!-- LECCIÓN 1: ARRAYS -->
+            <div class="leccion-card">
+                <div class="emoji">📦</div>
+                <div class="badge">Lección 1</div>
+                <h2>Arrays</h2>
+                <p>Aprende a crear y manipular listas de datos. Push, pop, map, filter y más.</p>
+                <a href="leccion-1-arrays.html">Empezar Lección →</a>
+            </div>
+
+            <!-- LECCIÓN 2: OBJETOS -->
+            <div class="leccion-card">
+                <div class="emoji">🏗️</div>
+                <div class="badge">Lección 2</div>
+                <h2>Objetos</h2>
+                <p>Datos con etiquetas. Propiedades, valores y métodos de objetos.</p>
+                <a href="leccion-2-objetos.html">Próximamente ⏳</a>
+            </div>
+
+            <!-- LECCIÓN 3: BUCLES -->
+            <div class="leccion-card">
+                <div class="emoji">🔄</div>
+                <div class="badge">Lección 3</div>
+                <h2>Bucles</h2>
+                <p>Repite código con for, while y forEach. Automatiza tareas.</p>
+                <a href="leccion-3-bucles.html">Próximamente ⏳</a>
+            </div>
+
+            <!-- LECCIÓN 4: STRINGS -->
+            <div class="leccion-card">
+                <div class="emoji">📝</div>
+                <div class="badge">Lección 4</div>
+                <h2>Strings</h2>
+                <p>Manipula texto. Busca, reemplaza, divide y transforma strings.</p>
+                <a href="leccion-4-strings.html">Próximamente ⏳</a>
+            </div>
+        </div>
+
+        <!-- Proyecto Anterior -->
+        <div class="proyecto-anterior">
+            <h3>👈 Volver a tu primer proyecto</h3>
+            <p>El contador interactivo que creamos al inicio</p>
+            <a href="index.html">Ver Contador →</a>
+        </div>
+    </div>
+</body>
+</html>
