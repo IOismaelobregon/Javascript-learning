@@ -1,0 +1,341 @@
+/* ==========================================
+   ESTILOS PARA LA LECCIÓN 1: ARRAYS
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header .subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.btn-volver {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-volver:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+/* SECCIONES DE LECCIÓN */
+.leccion {
+    padding: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    scroll-margin-top: 100px;
+}
+
+.leccion:last-of-type {
+    border-bottom: none;
+}
+
+.leccion h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.contenido {
+    margin-left: 20px;
+}
+
+.contenido p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.contenido strong {
+    color: #333;
+}
+
+/* VISUAL ARRAY */
+.visual-array {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.compartimento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.indice {
+    background: #667eea;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.valor {
+    background: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #667eea;
+    font-weight: 500;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* CÓDIGO */
+.codigo {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    overflow-x: auto;
+    border-left: 4px solid #667eea;
+}
+
+.codigo pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.codigo code {
+    color: #ce9178;
+}
+
+/* BOTONES */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-ejemplo {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-top: 15px;
+}
+
+.btn-ejemplo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-ejemplo:active {
+    transform: translateY(-1px);
+}
+
+/* SECCIÓN DE DESAFÍO */
+.leccion-desafio {
+    background: #f9f3e6;
+    border-left: 4px solid #ffc107;
+}
+
+.leccion-desafio h2 {
+    color: #ff9800;
+}
+
+/* CONSOLA PERSONALIZADA */
+.consola-section {
+    padding: 30px;
+    background: #f5f5f5;
+    border-top: 2px solid #e0e0e0;
+}
+
+.consola-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.consola {
+    background: #1e1e1e;
+    color: #4ec9b0;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 150px;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 2px solid #667eea;
+}
+
+.consola:empty::before {
+    content: "La consola aparecerá aquí cuando hagas click en los botones...";
+    color: #666;
+    opacity: 0.5;
+}
+
+.consola-linea {
+    margin-bottom: 8px;
+    padding: 5px 0;
+    border-bottom: 1px solid #333;
+}
+
+.consola-linea:last-child {
+    border-bottom: none;
+}
+
+.consola-info {
+    color: #4ec9b0;
+}
+
+.consola-error {
+    color: #f48771;
+}
+
+.consola-warning {
+    color: #dcdcaa;
+}
+
+/* BOTÓN LIMPIAR */
+.btn-limpiar {
+    background: #ff6b6b;
+    color: white;
+    margin-top: 15px;
+}
+
+.btn-limpiar:hover {
+    background: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+/* SIGUIENTE LECCIÓN */
+.siguiente-leccion {
+    padding: 30px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    text-align: center;
+    color: white;
+}
+
+.siguiente-leccion h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.btn-siguiente {
+    background: white;
+    color: #f5576c;
+    font-weight: 700;
+    padding: 15px 40px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-siguiente:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .leccion {
+        padding: 20px;
+    }
+
+    .contenido {
+        margin-left: 10px;
+    }
+
+    .codigo {
+        font-size: 12px;
+    }
+
+    .visual-array {
+        gap: 10px;
+    }
+
+    .compartimento {
+        gap: 5px;
+    }
+
+    .valor {
+        min-width: 80px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .leccion {
+        padding: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .visual-array {
+        flex-direction: column;
+    }
+}
