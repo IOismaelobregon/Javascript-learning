@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 1: Arrays en JavaScript</title>
+    <link rel="stylesheet" href="leccion-1-arrays.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Lección 1: ARRAYS en JavaScript</h1>
+            <p class="subtitle">Aprende qué son los arrays y cómo usarlos</p>
+            <a href="index-lecciones.html" class="btn-volver">← Volver al menú</a>
+        </header>
+
+        <!-- SECCIÓN 1: QUÉ ES UN ARRAY -->
+        <section class="leccion">
+            <h2>1️⃣ ¿QUÉ ES UN ARRAY?</h2>
+            <div class="contenido">
+                <p>Un <strong>array</strong> es una <strong>lista de datos</strong> guardados en una sola variable.</p>
+                <p>Piensa en un array como una caja con compartimentos numerados:</p>
+                <div class="visual-array">
+                    <div class="compartimento">
+                        <span class="indice">0</span>
+                        <span class="valor">Manzana</span>
+                    </div>
+                    <div class="compartimento">
+                        <span class="indice">1</span>
+                        <span class="valor">Plátano</span>
+                    </div>
+                    <div class="compartimento">
+                        <span class="indice">2</span>
+                        <span class="valor">Naranja</span>
+                    </div>
+                </div>
+                <p><strong>Nota:</strong> Los arrays empiezan a contar desde <strong>0</strong>, no desde 1.</p>
+                <button class="btn btn-ejemplo" onclick="ejemplo1()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: CREAR ARRAYS -->
+        <section class="leccion">
+            <h2>2️⃣ CREAR ARRAYS</h2>
+            <div class="contenido">
+                <p>Hay diferentes formas de crear un array:</p>
+                <div class="codigo">
+                    <pre><code>// Forma 1: Usar corchetes [ ]
+let frutas = ['manzana', 'plátano', 'naranja'];
+
+// Forma 2: Usar new Array()
+let numeros = new Array(1, 2, 3, 4, 5);
+
+// Forma 3: Array vacío
+let lista = [];
+lista[0] = 'primero';
+lista[1] = 'segundo';</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo2()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: ACCEDER A ELEMENTOS -->
+        <section class="leccion">
+            <h2>3️⃣ ACCEDER A ELEMENTOS</h2>
+            <div class="contenido">
+                <p>Para acceder a un elemento, usa su <strong>índice</strong> (posición):</p>
+                <div class="codigo">
+                    <pre><code>let frutas = ['manzana', 'plátano', 'naranja'];
+
+frutas[0]  // 'manzana' (primer elemento)
+frutas[1]  // 'plátano' (segundo elemento)
+frutas[2]  // 'naranja' (tercer elemento)
+
+// También puedes cambiar valores:
+frutas[0] = 'piña';  // Ahora frutas[0] es 'piña'</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo3()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: PROPIEDADES Y MÉTODOS -->
+        <section class="leccion">
+            <h2>4️⃣ PROPIEDADES Y MÉTODOS BÁSICOS</h2>
+            <div class="contenido">
+                <p><strong>.length</strong> - Saber cuántos elementos hay:</p>
+                <div class="codigo">
+                    <pre><code>let frutas = ['manzana', 'plátano', 'naranja'];
+console.log(frutas.length);  // 3</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo4()">▶ Ver .length en consola</button>
+
+                <p style="margin-top: 20px;"><strong>.push()</strong> - Agregar un elemento al final:</p>
+                <div class="codigo">
+                    <pre><code>let frutas = ['manzana', 'plátano'];
+frutas.push('naranja');
+console.log(frutas);  // ['manzana', 'plátano', 'naranja']</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo5()">▶ Ver .push() en consola</button>
+
+                <p style="margin-top: 20px;"><strong>.pop()</strong> - Quitar el último elemento:</p>
+                <div class="codigo">
+                    <pre><code>let frutas = ['manzana', 'plátano', 'naranja'];
+frutas.pop();
+console.log(frutas);  // ['manzana', 'plátano']</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo6()">▶ Ver .pop() en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: RECORRER ARRAYS CON forEach -->
+        <section class="leccion">
+            <h2>5️⃣ RECORRER UN ARRAY CON forEach</h2>
+            <div class="contenido">
+                <p><strong>.forEach()</strong> - Hacer algo con cada elemento:</p>
+                <div class="codigo">
+                    <pre><code>let frutas = ['manzana', 'plátano', 'naranja'];
+
+frutas.forEach(function(fruta) {
+    console.log('Fruta: ' + fruta);
+});
+
+// Resultado en consola:
+// Fruta: manzana
+// Fruta: plátano
+// Fruta: naranja</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo7()">▶ Ver .forEach() en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: MAP - TRANSFORMAR DATOS -->
+        <section class="leccion">
+            <h2>6️⃣ .map() - TRANSFORMAR DATOS</h2>
+            <div class="contenido">
+                <p><strong>.map()</strong> - Crear un nuevo array con datos transformados:</p>
+                <div class="codigo">
+                    <pre><code>let numeros = [1, 2, 3, 4, 5];
+
+// Crear un array con cada número multiplicado por 2
+let duplicados = numeros.map(function(num) {
+    return num * 2;
+});
+
+console.log(duplicados);  // [2, 4, 6, 8, 10]</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo8()">▶ Ver .map() en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: FILTER - FILTRAR DATOS -->
+        <section class="leccion">
+            <h2>7️⃣ .filter() - FILTRAR DATOS</h2>
+            <div class="contenido">
+                <p><strong>.filter()</strong> - Crear un nuevo array con solo los elementos que cumplan una condición:</p>
+                <div class="codigo">
+                    <pre><code>let numeros = [1, 2, 3, 4, 5, 6];
+
+// Crear un array solo con números mayores a 3
+let mayoresA3 = numeros.filter(function(num) {
+    return num > 3;
+});
+
+console.log(mayoresA3);  // [4, 5, 6]</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo9()">▶ Ver .filter() en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: DESAFÍO -->
+        <section class="leccion leccion-desafio">
+            <h2>🎯 DESAFÍO: Combina lo aprendido</h2>
+            <div class="contenido">
+                <p>Lee el código y adivina qué mostrará en consola:</p>
+                <div class="codigo">
+                    <pre><code>let edades = [15, 20, 25, 18, 30, 22];
+
+let mayoresDeEdad = edades.filter(function(edad) {
+    return edad >= 18;
+});
+
+console.log(mayoresDeEdad);</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="desafio1()">▶ Ver la respuesta</button>
+            </div>
+        </section>
+
+        <!-- CONSOLA PERSONALIZADA -->
+        <section class="consola-section">
+            <h3>📟 Consola:</h3>
+            <div id="consola" class="consola"></div>
+            <button class="btn btn-limpiar" onclick="limpiarConsola()">🗑️ Limpiar consola</button>
+        </section>
+
+        <!-- SIGUIENTE LECCIÓN -->
+        <section class="siguiente-leccion">
+            <h3>¿Listo para el siguiente nivel?</h3>
+            <a href="leccion-2-objetos.html" class="btn btn-siguiente">Ir a Lección 2: OBJETOS →</a>
+        </section>
+    </div>
+
+    <script src="leccion-1-arrays.js"></script>
+</body>
+</html>
