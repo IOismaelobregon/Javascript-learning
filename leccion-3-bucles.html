@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 3: Bucles en JavaScript</title>
+    <link rel="stylesheet" href="leccion-3-bucles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Lección 3: BUCLES en JavaScript</h1>
+            <p class="subtitle">Aprende a repetir código de forma inteligente</p>
+            <a href="index-lecciones.html" class="btn-volver">← Volver al menú</a>
+        </header>
+
+        <!-- SECCIÓN 1: QUÉ SON LOS BUCLES -->
+        <section class="leccion">
+            <h2>1️⃣ ¿QUÉ SON LOS BUCLES?</h2>
+            <div class="contenido">
+                <p>Un <strong>bucle</strong> es un bloque de código que se ejecuta <strong>varias veces</strong>.</p>
+                <p>Son útiles cuando necesitas hacer lo mismo repetidamente sin escribir el código 100 veces.</p>
+                <div class="comparacion">
+                    <div class="item">
+                        <h4>Sin bucle (❌ Malo):</h4>
+                        <code>console.log('Hola 1');<br>console.log('Hola 2');<br>console.log('Hola 3');<br>...</code>
+                        <p>¡Código repetitivo y feo!</p>
+                    </div>
+                    <div class="item">
+                        <h4>Con bucle (✅ Bueno):</h4>
+                        <code>for (let i = 1; i <= 3; i++) {<br>&nbsp;&nbsp;console.log('Hola ' + i);<br>}</code>
+                        <p>¡Código limpio y elegante!</p>
+                    </div>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo1()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: FOR LOOP -->
+        <section class="leccion">
+            <h2>2️⃣ BUCLE FOR (El más usado)</h2>
+            <div class="contenido">
+                <p>El <strong>for</strong> es el bucle más común. Se ejecuta un número específico de veces:</p>
+                <div class="codigo">
+                    <pre><code>for (let i = 0; i < 5; i++) {
+    console.log('Iteración: ' + i);
+}
+
+// i = 0, i < 5 ? SI → console.log('Iteración: 0') → i++
+// i = 1, i < 5 ? SI → console.log('Iteración: 1') → i++
+// i = 2, i < 5 ? SI → console.log('Iteración: 2') → i++
+// ... hasta que i = 5, i < 5 ? NO → TERMINA</code></pre>
+                </div>
+                <p style="margin-top: 15px;"><strong>Estructura:</strong> <code>for (inicio; condición; incremento)</code></p>
+                <button class="btn btn-ejemplo" onclick="ejemplo2()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: FOR CON ARRAYS -->
+        <section class="leccion">
+            <h2>3️⃣ FOR CON ARRAYS</h2>
+            <div class="contenido">
+                <p>El <strong>for</strong> es perfecto para recorrer arrays:</p>
+                <div class="codigo">
+                    <pre><code>let frutas = ['manzana', 'plátano', 'naranja'];
+
+for (let i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]);
+}
+
+// Resultado:
+// manzana
+// plátano
+// naranja</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo3()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: WHILE LOOP -->
+        <section class="leccion">
+            <h2>4️⃣ BUCLE WHILE</h2>
+            <div class="contenido">
+                <p>El <strong>while</strong> se ejecuta mientras una condición sea verdadera:</p>
+                <div class="codigo">
+                    <pre><code>let i = 0;
+
+while (i < 5) {
+    console.log('i vale: ' + i);
+    i++;
+}
+
+// Se repite mientras i < 5</code></pre>
+                </div>
+                <p style="margin-top: 15px;"><strong>⚠️ CUIDADO:</strong> Si olvidas actualizar la variable, ¡bucle infinito!</p>
+                <button class="btn btn-ejemplo" onclick="ejemplo4()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: DO...WHILE -->
+        <section class="leccion">
+            <h2>5️⃣ BUCLE DO...WHILE</h2>
+            <div class="contenido">
+                <p>El <strong>do...while</strong> se ejecuta <strong>al menos una vez</strong>, incluso si la condición es falsa:</p>
+                <div class="codigo">
+                    <pre><code>let i = 0;
+
+do {
+    console.log('Ejecuto al menos una vez');
+    i++;
+} while (i < 0);  // Condición falsa desde el inicio
+
+// Aun así se ejecuta una vez!</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo5()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: BREAK Y CONTINUE -->
+        <section class="leccion">
+            <h2>6️⃣ BREAK Y CONTINUE</h2>
+            <div class="contenido">
+                <p><strong>break</strong> - Salir del bucle inmediatamente:</p>
+                <div class="codigo">
+                    <pre><code>for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break;  // Salir cuando i sea 5
+    }
+    console.log(i);
+}
+
+// Resultado: 0, 1, 2, 3, 4 (se detiene en 5)</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo6()">▶ Ver ejemplo (break)</button>
+
+                <p style="margin-top: 20px;"><strong>continue</strong> - Saltar a la siguiente iteración:</p>
+                <div class="codigo">
+                    <pre><code>for (let i = 0; i < 5; i++) {
+    if (i === 2) {
+        continue;  // Saltarse cuando i sea 2
+    }
+    console.log(i);
+}
+
+// Resultado: 0, 1, 3, 4 (omite el 2)</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo7()">▶ Ver ejemplo (continue)</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: BUCLES ANIDADOS -->
+        <section class="leccion">
+            <h2>7️⃣ BUCLES ANIDADOS (Bucles dentro de bucles)</h2>
+            <div class="contenido">
+                <p>Puedes poner bucles <strong>dentro de otros bucles</strong>:</p>
+                <div class="codigo">
+                    <pre><code>for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= 3; j++) {
+        console.log(i + ',' + j);
+    }
+}
+
+// Resultado:
+// 1,1  1,2  1,3
+// 2,1  2,2  2,3
+// 3,1  3,2  3,3</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo8()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: FOR...OF -->
+        <section class="leccion">
+            <h2>8️⃣ FOR...OF (Forma moderna)</h2>
+            <div class="contenido">
+                <p>El <strong>for...of</strong> es más limpio que el for tradicional:</p>
+                <div class="codigo">
+                    <pre><code>let frutas = ['manzana', 'plátano', 'naranja'];
+
+// Forma antigua
+for (let i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]);
+}
+
+// Forma moderna (for...of)
+for (let fruta of frutas) {
+    console.log(fruta);
+}
+
+// ¡Mismo resultado, código más limpio!</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo9()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 9: BUCLES CON OBJETOS -->
+        <section class="leccion">
+            <h2>9️⃣ BUCLES CON OBJETOS (for...in)</h2>
+            <div class="contenido">
+                <p>El <strong>for...in</strong> recorre las propiedades de un objeto:</p>
+                <div class="codigo">
+                    <pre><code>let persona = {
+    nombre: 'Juan',
+    edad: 25,
+    pais: 'México'
+};
+
+for (let clave in persona) {
+    console.log(clave + ': ' + persona[clave]);
+}
+
+// Resultado:
+// nombre: Juan
+// edad: 25
+// pais: México</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo10()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 10: DESAFÍO -->
+        <section class="leccion leccion-desafio">
+            <h2>🎯 DESAFÍO: Tabla de multiplicar</h2>
+            <div class="contenido">
+                <p>Crea la tabla de multiplicar del 5 usando un bucle:</p>
+                <div class="codigo">
+                    <pre><code>for (let i = 1; i <= 10; i++) {
+    console.log('5 x ' + i + ' = ' + (5 * i));
+}</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="desafio1()">▶ Ver la respuesta</button>
+            </div>
+        </section>
+
+        <!-- CONSOLA PERSONALIZADA -->
+        <section class="consola-section">
+            <h3>📟 Consola:</h3>
+            <div id="consola" class="consola"></div>
+            <button class="btn btn-limpiar" onclick="limpiarConsola()">🗑️ Limpiar consola</button>
+        </section>
+
+        <!-- SIGUIENTE LECCIÓN -->
+        <section class="siguiente-leccion">
+            <h3>¿Listo para el siguiente nivel?</h3>
+            <a href="leccion-4-strings.html" class="btn-siguiente">Ir a Lección 4: STRINGS →</a>
+        </section>
+    </div>
+
+    <script src="leccion-3-bucles.js"></script>
+</body>
+</html>
