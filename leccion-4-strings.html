@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 4: Strings en JavaScript</title>
+    <link rel="stylesheet" href="leccion-4-strings.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Lección 4: STRINGS en JavaScript</h1>
+            <p class="subtitle">Domina el manejo de texto</p>
+            <a href="index-lecciones.html" class="btn-volver">← Volver al menú</a>
+        </header>
+
+        <!-- SECCIÓN 1: QUÉ ES UN STRING -->
+        <section class="leccion">
+            <h2>1️⃣ ¿QUÉ ES UN STRING?</h2>
+            <div class="contenido">
+                <p>Un <strong>String</strong> es una secuencia de caracteres (texto). Se envuelve entre comillas:</p>
+                <div class="comparacion">
+                    <div class="item">
+                        <h4>Comillas simples:</h4>
+                        <code>let nombre = 'Juan';</code>
+                    </div>
+                    <div class="item">
+                        <h4>Comillas dobles:</h4>
+                        <code>let nombre = "Juan";</code>
+                    </div>
+                    <div class="item">
+                        <h4>Template literals:</h4>
+                        <code>let nombre = `Juan`;</code>
+                    </div>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo1()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: CONCATENACIÓN -->
+        <section class="leccion">
+            <h2>2️⃣ CONCATENACIÓN - Unir strings</h2>
+            <div class="contenido">
+                <p>Unir dos o más strings:</p>
+                <div class="codigo">
+                    <pre><code>let nombre = "Juan";
+let apellido = "Pérez";
+
+// Forma 1: con +
+let completo = nombre + " " + apellido;
+
+// Forma 2: con template literals
+let completo2 = `${nombre} ${apellido}`;</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo2()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: LONGITUD -->
+        <section class="leccion">
+            <h2>3️⃣ LONGITUD - Contar caracteres</h2>
+            <div class="contenido">
+                <p>La propiedad <strong>.length</strong> devuelve la cantidad de caracteres:</p>
+                <div class="codigo">
+                    <pre><code>let texto = "Hola";
+console.log(texto.length); // 4
+
+let frase = "JavaScript es genial";
+console.log(frase.length); // 20</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo3()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: MÉTODOS BÁSICOS -->
+        <section class="leccion">
+            <h2>4️⃣ MÉTODOS ÚTILES</h2>
+            <div class="contenido">
+                <p><strong>.toUpperCase()</strong> - Convertir a mayúsculas:</p>
+                <div class="codigo">
+                    <pre><code>let texto = "hola mundo";
+console.log(texto.toUpperCase()); // "HOLA MUNDO"</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo4()">▶ Ver ejemplo en consola</button>
+
+                <p style="margin-top: 20px;"><strong>.toLowerCase()</strong> - Convertir a minúsculas:</p>
+                <div class="codigo">
+                    <pre><code>let texto = "HOLA MUNDO";
+console.log(texto.toLowerCase()); // "hola mundo"</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo5()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: ACCEDER A CARACTERES -->
+        <section class="leccion">
+            <h2>5️⃣ ACCEDER A CARACTERES</h2>
+            <div class="contenido">
+                <p>Usa índices para acceder a caracteres individuales:</p>
+                <div class="codigo">
+                    <pre><code>let palabra = "JavaScript";
+
+console.log(palabra[0]); // "J"
+console.log(palabra[4]); // "S"
+console.log(palabra.charAt(0)); // "J"</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo6()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: BUSCAR TEXTO -->
+        <section class="leccion">
+            <h2>6️⃣ BUSCAR TEXTO - indexOf()</h2>
+            <div class="contenido">
+                <p>Encuentra la posición de un texto:</p>
+                <div class="codigo">
+                    <pre><code>let frase = "Me encanta JavaScript";
+
+console.log(frase.indexOf("encanta")); // 3
+console.log(frase.indexOf("Python")); // -1 (no encontrado)</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo7()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: EXTRAER PARTE -->
+        <section class="leccion">
+            <h2>7️⃣ EXTRAER PARTE - slice()</h2>
+            <div class="contenido">
+                <p>Extrae una parte del string:</p>
+                <div class="codigo">
+                    <pre><code>let palabra = "JavaScript";
+
+console.log(palabra.slice(0, 4)); // "Java"
+console.log(palabra.slice(4)); // "Script"
+console.log(palabra.slice(-6)); // "Script"</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo8()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: REEMPLAZAR TEXTO -->
+        <section class="leccion">
+            <h2>8️⃣ REEMPLAZAR - replace()</h2>
+            <div class="contenido">
+                <p>Reemplaza la primera ocurrencia:</p>
+                <div class="codigo">
+                    <pre><code>let frase = "Me encanta Java";
+
+let nueva = frase.replace("Java", "JavaScript");
+console.log(nueva); // "Me encanta JavaScript"</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo9()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 9: DIVIDIR STRINGS -->
+        <section class="leccion">
+            <h2>9️⃣ DIVIDIR - split()</h2>
+            <div class="contenido">
+                <p>Convierte un string en un array:</p>
+                <div class="codigo">
+                    <pre><code>let frase = "JavaScript es increíble";
+
+let palabras = frase.split(" ");
+console.log(palabras);
+// ["JavaScript", "es", "increíble"]</code></pre>
+                </div>
+                <button class="btn btn-ejemplo" onclick="ejemplo10()">▶ Ver ejemplo en consola</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 10: DESAFÍO -->
+        <section class="leccion leccion-desafio">
+            <h2>🎯 DESAFÍO: Validador de email simple</h2>
+            <div class="contenido">
+                <p>Crea una función que verifique si un email contiene @:</p>
+                <button class="btn btn-ejemplo" onclick="desafio1()">▶ Ver la respuesta</button>
+            </div>
+        </section>
+
+        <!-- CONSOLA PERSONALIZADA -->
+        <section class="consola-section">
+            <h3>📟 Consola:</h3>
+            <div id="consola" class="consola"></div>
+            <button class="btn btn-limpiar" onclick="limpiarConsola()">🗑️ Limpiar consola</button>
+        </section>
+
+        <!-- FIN DEL PROYECTO -->
+        <section class="siguiente-leccion">
+            <h3>🎉 ¡FELICIDADES!</h3>
+            <p>Completaste todas las lecciones fundamentales de JavaScript</p>
+            <a href="index-lecciones.html" class="btn-siguiente">← Volver al menú principal</a>
+        </section>
+    </div>
+
+    <script src="leccion-4-strings.js"></script>
+</body>
+</html>
